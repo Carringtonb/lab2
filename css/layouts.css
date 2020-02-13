@@ -1,0 +1,22 @@
+
+section{
+    float:left;
+    padding: 10px;
+    border: 2px solid black;
+    margin: 5px;
+    width: 30%;
+    height: 500px;
+}
+img{
+    width: 90%;
+    height: 80%;
+}
+#photo-template{
+    display: none;
+}
+footer{
+    clear: both;
+}
+[data-keyword|="dragon"]{
+
+}
