@@ -1,3 +1,5 @@
+'use strict';
+
 $.ajax('data/page-2.json', {method: 'GET', dataType: 'JSON',})
   .then(images => {
     images.forEach(image => {
@@ -53,14 +55,13 @@ function addDropDownOptions (){
   allKeywords.forEach(keyword => {
     const $newOption = $(`<option value="${keyword}">${keyword}</option>`);
     $dropdown.append($newOption);
-  })
+  });
 }
 
 Image.prototype.create = function(){
   let template = $('#horns-template').html();
-console.log(template, 'kkojkoij');
   let templateRender = Handlebars.compile(template);
 
   return templateRender(this);
-}
+};
 
