@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Gallery of Horns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="css/reset.css">
+       <link rel="stylesheet" href="css/base.css">
+       <link rel="stylesheet" href="css/layouts.css">
+       <link rel="stylesheet" href="css/modules.css">
+       <script id = "horns-template" type="text/x-handlebars-template">
+        <div>
+            <h2>{{title}}</h2>
+            <img src="{{imageUrl}}">
+            <p>{{description}}</p>
+        </div>
+    </script>
+</head>
+<body>
+    <header>
+        <h1>The Gallery of Horns</h1>
+        <select>
+            <option value="default">Filter by Keyword</option>
+        </select>
+    </header>
+    <main>
+        <section id = "collection">
+        </section>
+            <button type='button'><a href='index.html'>Home</a></button>
+        </main>
+        <footer>
+            &copy; 2018 Code Fellows
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.2.0/handlebars.min.js"></script>
+
+    <script type="text/javascript" src="JS/page2.js"></script>
+  </body>
+</html>
