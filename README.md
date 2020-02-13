@@ -1,5 +1,9 @@
 # lab2
 
+# Credit:
+- Andrew Casper, Carrington Beard, Anthony Cunningham
+- Falling leaves from Casthra Demosthene https://codepen.io/incrediblecast/pen/yLBmVXQ
+
 ## Time Est - Feat. 1
 
 - Number and name of feature: 1 Display images
