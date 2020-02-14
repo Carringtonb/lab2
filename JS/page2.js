@@ -61,7 +61,6 @@ function addDropDownOptions (){
 Image.prototype.create = function(){
   let template = $('#horns-template').html();
   let templateRender = Handlebars.compile(template);
-
   return templateRender(this);
 };
 
