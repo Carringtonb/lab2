@@ -1,13 +1,32 @@
 
-section{
-    float:left;
-    padding: 10px;
-    border: 2px solid black;
-    margin: 5px;
+.hornCard {
+    float: left;
     width: 30%;
+    margin: 5px;
     height: 500px;
+    background-color: burlywood;
 }
-img{
+
+.hornCard img {
+    width: 90%;
+    height: 80%;
+}
+
+#collection {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#collection section{
+    width: 300px;
+    border: solid 1px;
+    margin: 5px;
+    height: 400px;
+    background-color: burlywood;
+}
+
+#collection img{
     width: 90%;
     height: 80%;
 }

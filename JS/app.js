@@ -41,6 +41,7 @@ Image.prototype.render = function(){
   $newSection.find('img').attr('src', this.imageUrl);
   $newSection.find('p').text(this.description);
   $newSection.attr('data-keyword', this.keyword);
+  $newSection.attr('class', 'hornCard');
   $('main').append($newSection);
 };
 
