@@ -5,18 +5,12 @@ $.ajax('data/page-2.json', {method: 'GET', dataType: 'JSON',})
     images.forEach(image => {
       new Image(image);
     });
-    collection.forEach(item => {
-      $('#collection').append(item.create());
-    });
-    addDropDownOptions();
-    $('select').on('change', function(){
-      $('section').hide();
-      $('section').each((index,element) => {
-        if(this.value === $(element).attr('data-keyword')){
-          $(element).show();
-        };
+      collection.forEach(item => {
+        $('#collection').append(item.create());
       });
-    });
+    addDropDownOptions();
+    filter();
+    sort();
   });
 
 let collection = [];
@@ -32,18 +26,6 @@ function Image(obj){
   addKeyword(obj.keyword);
 }
 
-// Image.prototype.render = function(){
-//   const template = $('#photo-template').html();
-
-//   const $newSection = $('<section></section>');
-//   $newSection.html(template);
-//   $newSection.find('h2').text(this.title);
-//   $newSection.find('img').attr('src', this.imageUrl);
-//   $newSection.find('p').text(this.description);
-//   $newSection.attr('data-keyword', this.keyword);
-//   $('main').append($newSection);
-// };
-
 function addKeyword(keyword){
   if(!allKeywords.includes(keyword)){
     allKeywords.push(keyword);
@@ -51,7 +33,7 @@ function addKeyword(keyword){
 }
 
 function addDropDownOptions (){
-  const $dropdown = $('select');
+  const $dropdown = $('.filter');
   allKeywords.forEach(keyword => {
     const $newOption = $(`<option value="${keyword}">${keyword}</option>`);
     $dropdown.append($newOption);
@@ -64,3 +46,35 @@ Image.prototype.create = function(){
   return templateRender(this);
 };
 
+function filter(){
+  $('.filter').on('change', function(){
+    $('section').hide();
+    $('section').each((index,element) => {
+      if(this.value === $(element).attr('data-keyword')){
+        $(element).show();
+      } else if(this.value === 'default'){
+        $('section').show();
+      };
+    });
+  });
+}
+
+function sort(){
+  $('.sort').on('change', function(){
+    $('section').remove();
+    if(this.value === 'title'){
+      collection.sort((a,b)=>{
+        return a.title < b.title ? -1 : 1;
+      })
+    } else if(this.value === 'horns'){
+      
+      collection.sort((a,b)=>{
+        return a.horns < b.horns ? -1 : 1;
+      });
+    };
+    
+    collection.forEach(item => {
+      $('#collection').append(item.create());
+    });
+  })
+}
